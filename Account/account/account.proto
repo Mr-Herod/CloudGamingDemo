@@ -1,0 +1,40 @@
+syntax = "proto3";
+package account;
+
+option go_package="./;account";
+
+message userRegisterReq {
+  string username = 1;
+  string password = 2;
+}
+
+message userRegisterRsp {
+  int32 errCode = 1;
+  string msg = 2;
+}
+
+message userLogInReq {
+  string username = 1;
+  string password = 2;
+}
+
+message userLogInRsp {
+  int32 errCode = 1;
+  string msg = 2;
+}
+
+message userLogOutReq {
+  string username = 1;
+  string password = 2;
+}
+
+message userLogOutRsp {
+  int32 errCode = 1;
+  string msg = 2;
+}
+
+service AccountService {
+  rpc UserRegister(userRegisterReq) returns (userRegisterRsp) {}
+  rpc UserLogIn(userLogInReq) returns (userLogInRsp) {}
+  rpc UserLogOut(userLogOutReq) returns (userLogOutRsp) {}
+}
