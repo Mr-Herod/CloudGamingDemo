@@ -1,0 +1,7 @@
+{
+    "serviceName":"Gamer",
+    "listenPort": 8010,
+    "gameImgPath": "../resource/img/squares/",
+    "gameWinPos": "8",
+    "ffmpegPath" : "../resource/programs/ffmpeg_linux"
+}

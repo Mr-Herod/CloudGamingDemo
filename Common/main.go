@@ -5,6 +5,9 @@ import (
 	"flag"
 	"fmt"
 	"log"
+	"os"
+	"path/filepath"
+	"strings"
 	"time"
 
 	"github.com/Mr-Herod/CloudGamingDemo/Naming/naming"
@@ -15,6 +18,16 @@ import (
 var (
 	addr = flag.String("addr", "localhost:10086", "the address to connect to")
 )
+
+func GetCurrentDirectory() string {
+	//返回绝对路径  filepath.Dir(os.Args[0])去除最后一个元素的路径
+	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
+	if err != nil {
+		log.Fatal(err)
+	}
+	//将\替换成/
+	return strings.Replace(dir, "\\", "/", -1)
+}
 
 func RegisterServer(serviceName, ip string, port int32) error {
 	flag.Parse()

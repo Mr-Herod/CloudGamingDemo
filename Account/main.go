@@ -4,13 +4,15 @@ import (
 	"context"
 	"flag"
 	"fmt"
+	"log"
+	"net"
+
 	pb "github.com/Mr-Herod/CloudGamingDemo/Account/account"
 	common "github.com/Mr-Herod/CloudGamingDemo/Common"
+
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
-	"log"
-	"net"
 )
 
 var (
@@ -22,8 +24,11 @@ type server struct {
 }
 
 func main() {
-	common.RegisterServer()
 	flag.Parse()
+	err := common.RegisterServer("Account", "localhost", int32(*port))
+	if err != nil {
+		panic(fmt.Sprintf("RegisterServer falied,err:%v", err))
+	}
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", *port))
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
