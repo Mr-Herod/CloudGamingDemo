@@ -22,6 +22,7 @@ type server struct {
 }
 
 func main() {
+	naming
 	flag.Parse()
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", *port))
 	if err != nil {
