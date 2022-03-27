@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>云游戏平台-主页</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>用户注册</title>
 </head>
 <body>
-	<br/>
-	<div width="20%" height="20%" align-content="center" align-items="center">
-		<a href="/signup" > 注册 </a>
-	</div>
-	<br/>
-	<br/>
-	<br/>
-	<a href="/signin">  登录 </a>
-	<br/>
-	<br/>
-	<br/>
-	<a href="/play" > 试玩 </a>
+<br/>
+<form name="signup" action="/signup" method="post">
+	username: <input type="text" name="username"><br>
+	password: <input type="password" name="password"><br>
+	nickname: <input type="text" name="nickname"><br>
+	<input type="submit" value="注册">
+</form>
+<br/>
+<br/>
+<br/>
 </body>
 </html>

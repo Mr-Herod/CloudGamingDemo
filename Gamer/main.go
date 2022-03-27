@@ -20,7 +20,7 @@ func main() {
 
 func handle(c *gin.Context) {
 	des := c.PostForm("des")
-	fmt.Println(des)
+	fmt.Println("client des:", des[:10])
 	desChan := make(chan string)
 	go RTC(des, desChan)
 	remoteDes := <-desChan

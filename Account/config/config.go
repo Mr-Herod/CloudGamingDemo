@@ -13,6 +13,7 @@ import (
 type ServiceConfig struct {
 	ServiceName string `json:"serviceName"`
 	ListenPort  int    `json:"listenPort"`
+	DBSource    string `json:"dbSource"`
 }
 
 var ServiceConf ServiceConfig
@@ -28,5 +29,5 @@ func Init() {
 	if err != nil {
 		panic(fmt.Sprintf("config json.Unmarshal error,err:%v", err))
 	}
-	log.Printf("ServiceConf: %+v", ServiceConf)
+	log.Printf("ServiceConf: %+v\n", ServiceConf)
 }

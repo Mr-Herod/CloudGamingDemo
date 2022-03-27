@@ -53,6 +53,7 @@ func RTC(des string, desChan chan string) {
 			// Wait until PeerConnection has had no network activity for 30 seconds or another failure. It may be reconnected using an ICE Restart.
 			// Use webrtc.PeerConnectionStateDisconnected if you are interested in detecting faster timeout.
 			// Note that the PeerConnection may come back from PeerConnectionStateDisconnected.
+			KillGame(portStr)
 			fmt.Println("Peer Connection has gone to failed exiting")
 			return
 		}
@@ -140,7 +141,7 @@ func RTC(des string, desChan chan string) {
 
 	// Output the answer in base64 so we can paste it in browser
 	remoteDes := signal.Encode(*peerConnection.LocalDescription())
-	fmt.Println(remoteDes[:10])
+	fmt.Println("server des:", remoteDes[:10])
 	desChan <- remoteDes
 	// Block forever
 	// Read RTP packets forever and send them to the WebRTC Client

@@ -28,7 +28,6 @@ func StartGame(port string) {
 	err := cmd.Run()
 	if err != nil {
 		fmt.Println(fmt.Sprint(err) + ": " + stderr.String())
-		return
 	}
 	fmt.Printf("ln -s ok\n")
 
@@ -40,10 +39,29 @@ func StartGame(port string) {
 			"-f rtp 'rtp://localhost:"+port+"?pkt_size=1200' > "+
 			dirPath+"ffmpeg.log &")
 	err = cmd.Run()
+	cmdPid := cmd.Process.Pid + 1 //查看命令pid
+	fmt.Println("cmdPid:", cmdPid)
 	if err != nil {
 		panic(err)
 	}
 	fmt.Printf("ffmpeg ok\n")
+}
+
+func KillGame(port string) {
+	cmd := exec.Command("/bin/bash", "-c",
+		"kill $(ps aux | grep '"+ffmpegPath+"' | "+
+			"grep 'squares/"+port+".jpg' | tr -s ' '| cut -d ' ' -f 2)")
+	var stderr bytes.Buffer
+	cmd.Stderr = &stderr
+	err := cmd.Run()
+	if err != nil {
+		fmt.Println(fmt.Sprint(err) + ": " + stderr.String())
+		return
+	}
+	if err != nil {
+		fmt.Printf("Kill game error:%v", err)
+	}
+	fmt.Printf("Kill game success:%v", err)
 }
 
 func Move(nowPos int, move string, port string) (int, bool) {
