@@ -77,6 +77,7 @@ func HandleSignUp(c *gin.Context) {
 	if err != nil {
 		log.Printf("UserRegister error: %v", err)
 		c.Redirect(http.StatusTemporaryRedirect, "/")
+		return
 	}
 	log.Printf("rsp: %v", rsp)
 	c.Redirect(http.StatusTemporaryRedirect, "/play")
@@ -108,6 +109,7 @@ func HandleSignIn(c *gin.Context) {
 	if err != nil || rsp.ErrCode != 0 {
 		log.Printf("UserLogin error: %v", err)
 		c.Redirect(http.StatusTemporaryRedirect, "/")
+		return
 	}
 	log.Printf("rsp: %v", rsp)
 	c.Redirect(http.StatusTemporaryRedirect, "/play")
