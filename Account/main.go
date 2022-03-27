@@ -7,8 +7,7 @@ import (
 	"log"
 	"net"
 
-	pb "Account/account"
-
+	pb "github.com/Mr-Herod/CloudGamingDemo/Account/account"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
@@ -46,4 +45,8 @@ func (s *server) UserLogIn(ctx context.Context, req *pb.UserLogInReq) (*pb.UserL
 
 func (s *server) UserLogOut(ctx context.Context, req *pb.UserLogOutReq) (*pb.UserLogOutRsp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserLogOut not implemented")
+}
+
+func RegisterServer() {
+
 }

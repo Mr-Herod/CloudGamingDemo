@@ -1,4 +1,4 @@
-module Account
+module github.com/Mr-Herod/CloudGamingDemo/Account
 
 go 1.16
 

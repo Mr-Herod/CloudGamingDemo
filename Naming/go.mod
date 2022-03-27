@@ -1,4 +1,4 @@
-module Naming
+module github.com/Mr-Herod/CloudGamingDemo/Naming
 
 go 1.16
 

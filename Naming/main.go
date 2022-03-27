@@ -7,7 +7,7 @@ import (
 	"log"
 	"net"
 
-	pb "Naming/naming"
+	pb "github.com/Mr-Herod/CloudGamingDemo/Naming/naming"
 
 	"google.golang.org/grpc"
 )
