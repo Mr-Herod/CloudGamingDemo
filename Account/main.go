@@ -28,7 +28,6 @@ var DB *sql.DB
 func main() {
 	config.Init()
 	initDB()
-	tmp()
 	port := flag.Int("port", config.ServiceConf.ListenPort, "The server port")
 	flag.Parse()
 	err := common.RegisterServer("Account", "localhost", int32(*port))
@@ -60,19 +59,8 @@ func initDB() {
 	DB = db
 }
 
-func tmp() {
-	_, err := DB.Exec(
-		"INSERT INTO users (userID,userName,password,nickName,bestRank) VALUES (?, ?, ?, ?, ?)",
-		0, "herod", "herod", "herod", -1,
-	)
-	if err != nil {
-		log.Printf("DB.Exec error,err:%v", err)
-		return
-	}
-	log.Printf("UserRegister succseeded!")
-}
-
 func (s *server) UserRegister(ctx context.Context, req *pb.UserRegisterReq) (rsp *pb.UserRegisterRsp, err error) {
+	rsp = &pb.UserRegisterRsp{}
 	_, err = DB.Exec(
 		"INSERT INTO users (userID,userName,password,nickName,bestRank) VALUES (?, ?, ?, ?, ?)",
 		0, req.Username, req.Password, req.Nickname, -1,
@@ -90,6 +78,7 @@ func (s *server) UserRegister(ctx context.Context, req *pb.UserRegisterReq) (rsp
 }
 
 func (s *server) UserLogIn(ctx context.Context, req *pb.UserLogInReq) (rsp *pb.UserLogInRsp, err error) {
+	rsp = &pb.UserLogInRsp{}
 	defer func() {
 		if err != nil {
 			rsp.ErrCode = -1

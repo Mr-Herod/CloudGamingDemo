@@ -19,8 +19,8 @@ type serverInfo struct {
 }
 
 var (
-	serverMap = make(map[string]serverInfo)
-	port      = flag.Int("port", 10086, "The server port")
+	ServerMap = make(map[string]*serverInfo)
+	Port      = flag.Int("Port", 10086, "The server Port")
 )
 
 type server struct {
@@ -29,7 +29,7 @@ type server struct {
 
 func main() {
 	flag.Parse()
-	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", *port))
+	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", *Port))
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
@@ -42,12 +42,12 @@ func main() {
 }
 
 func (s *server) RegisterService(ctx context.Context, req *pb.RegisterServiceReq) (*pb.RegisterServiceRsp, error) {
-	serverMap[req.ServiceName] = serverInfo{
+	ServerMap[req.ServiceName] = &serverInfo{
 		Name: req.ServiceName,
 		Ip:   req.IP,
 		Port: req.Port,
 	}
-	log.Printf("RegisterService: %+v succeeded!", serverMap[req.ServiceName])
+	log.Printf("RegisterService: %+v succeeded!", ServerMap[req.ServiceName])
 	return &pb.RegisterServiceRsp{
 		ErrCode: 0,
 		Msg:     "RegisterService succeeded!",
@@ -55,10 +55,12 @@ func (s *server) RegisterService(ctx context.Context, req *pb.RegisterServiceReq
 }
 
 func (s *server) FindService(ctx context.Context, req *pb.FindServiceReq) (rsp *pb.FindServiceRsp, err error) {
-	info := serverMap[req.ServiceName]
+	rsp = &pb.FindServiceRsp{}
+	log.Printf("ServerMap: %+v !", ServerMap)
+	log.Printf("Finding server: %v %+v!", req.ServiceName, ServerMap[req.ServiceName])
+	info := ServerMap[req.ServiceName]
 	rsp.ServiceName = info.Name
 	rsp.IP = info.Ip
 	rsp.Port = info.Port
-	log.Printf("FindService: %+v succeeded!", serverMap[req.ServiceName])
 	return
 }

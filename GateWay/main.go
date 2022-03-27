@@ -2,21 +2,18 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"net/http"
 	"strconv"
 	"time"
 
 	"github.com/Mr-Herod/CloudGamingDemo/Account/account"
-
 	common "github.com/Mr-Herod/CloudGamingDemo/Common"
+	"github.com/Mr-Herod/CloudGamingDemo/Gateway/config"
 
+	"github.com/gin-gonic/gin"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
-
-	"github.com/Mr-Herod/CloudGamingDemo/Gateway/config"
-	"github.com/gin-gonic/gin"
 )
 
 func main() {
@@ -39,6 +36,9 @@ func main() {
 	r.GET("/signin", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "signin.html", gin.H{})
 	})
+	r.POST("/play", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "play.html", gin.H{})
+	})
 	r.GET("/play", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "play.html", gin.H{})
 	})
@@ -55,7 +55,7 @@ func HandleSignUp(c *gin.Context) {
 	conn, err := grpc.Dial(ip+":"+strconv.Itoa(int(port)), grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		log.Printf("did not connect: %v", err)
-		c.HTML(http.StatusBadGateway, "signup.html", gin.H{})
+		c.Redirect(http.StatusTemporaryRedirect, "/")
 		return
 	}
 	defer conn.Close()
@@ -76,10 +76,10 @@ func HandleSignUp(c *gin.Context) {
 	})
 	if err != nil {
 		log.Printf("UserRegister error: %v", err)
-		c.HTML(http.StatusBadGateway, "signup.html", gin.H{})
+		c.Redirect(http.StatusTemporaryRedirect, "/")
 	}
 	log.Printf("rsp: %v", rsp)
-	c.Redirect(http.StatusOK, "/play")
+	c.Redirect(http.StatusTemporaryRedirect, "/play")
 }
 
 func HandleSignIn(c *gin.Context) {
@@ -88,7 +88,7 @@ func HandleSignIn(c *gin.Context) {
 	conn, err := grpc.Dial(ip+":"+strconv.Itoa(int(port)), grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		log.Printf("did not connect: %v", err)
-		c.JSON(http.StatusBadRequest, fmt.Sprintf("connect error: %v", err))
+		c.Redirect(http.StatusTemporaryRedirect, "/")
 		return
 	}
 	defer conn.Close()
@@ -107,8 +107,8 @@ func HandleSignIn(c *gin.Context) {
 	})
 	if err != nil || rsp.ErrCode != 0 {
 		log.Printf("UserLogin error: %v", err)
-		c.JSON(http.StatusBadRequest, fmt.Sprintf("UserLogin error: %v", err))
+		c.Redirect(http.StatusTemporaryRedirect, "/")
 	}
 	log.Printf("rsp: %v", rsp)
-	c.Redirect(http.StatusOK, "/play")
+	c.Redirect(http.StatusTemporaryRedirect, "/play")
 }
