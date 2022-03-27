@@ -20,7 +20,7 @@ type serverInfo struct {
 
 var (
 	serverMap = make(map[string]serverInfo)
-	port      = flag.Int("port", 50051, "The server port")
+	port      = flag.Int("port", 10086, "The server port")
 )
 
 type server struct {
@@ -47,7 +47,11 @@ func (s *server) RegisterService(ctx context.Context, req *pb.RegisterServiceReq
 		Ip:   req.IP,
 		Port: req.Port,
 	}
-	return nil, nil
+	log.Printf("RegisterService: %+v succeeded!", serverMap[req.ServiceName])
+	return &pb.RegisterServiceRsp{
+		ErrCode: 0,
+		Msg:     "RegisterService succeeded!",
+	}, nil
 }
 
 func (s *server) FindService(ctx context.Context, req *pb.FindServiceReq) (rsp *pb.FindServiceRsp, err error) {
@@ -55,5 +59,6 @@ func (s *server) FindService(ctx context.Context, req *pb.FindServiceReq) (rsp *
 	rsp.ServiceName = info.Name
 	rsp.IP = info.Ip
 	rsp.Port = info.Port
+	log.Printf("FindService: %+v succeeded!", serverMap[req.ServiceName])
 	return
 }

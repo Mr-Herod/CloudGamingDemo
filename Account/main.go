@@ -4,13 +4,13 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"log"
-	"net"
-
 	pb "github.com/Mr-Herod/CloudGamingDemo/Account/account"
+	common "github.com/Mr-Herod/CloudGamingDemo/Common"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
+	"log"
+	"net"
 )
 
 var (
@@ -22,7 +22,7 @@ type server struct {
 }
 
 func main() {
-	naming
+	common.RegisterServer()
 	flag.Parse()
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", *port))
 	if err != nil {
@@ -46,8 +46,4 @@ func (s *server) UserLogIn(ctx context.Context, req *pb.UserLogInReq) (*pb.UserL
 
 func (s *server) UserLogOut(ctx context.Context, req *pb.UserLogOutReq) (*pb.UserLogOutRsp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserLogOut not implemented")
-}
-
-func RegisterServer() {
-
 }
