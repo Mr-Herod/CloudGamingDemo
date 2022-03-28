@@ -1,5 +1,5 @@
 {
-    "serviceName":"Gamer",
+    "serviceName":"Gateway",
     "listenPort": 8009,
     "resourcePath": "../resource/"
 }

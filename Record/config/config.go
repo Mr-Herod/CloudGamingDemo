@@ -13,6 +13,7 @@ import (
 type ServiceConfig struct {
 	ServiceName string `json:"serviceName"`
 	ListenPort  int    `json:"listenPort"`
+	DBSource    string `json:"dbSource"`
 }
 
 var ServiceConf ServiceConfig

@@ -15,8 +15,6 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
 )
 
 type server struct {
@@ -25,7 +23,10 @@ type server struct {
 
 var DB *sql.DB
 
+const DefaultID = 0
+
 func main() {
+	log.SetFlags(log.Lshortfile | log.Llongfile) // set flags
 	config.Init()
 	initDB()
 	port := flag.Int("port", config.ServiceConf.ListenPort, "The server port")
@@ -63,7 +64,7 @@ func (s *server) UserRegister(ctx context.Context, req *pb.UserRegisterReq) (rsp
 	rsp = &pb.UserRegisterRsp{}
 	_, err = DB.Exec(
 		"INSERT INTO users (userID,userName,password,nickName,bestRank) VALUES (?, ?, ?, ?, ?)",
-		0, req.Username, req.Password, req.Nickname, -1,
+		DefaultID, req.Username, req.Password, req.Nickname, DefaultID,
 	)
 	if err != nil {
 		log.Printf("DB.Exec error,err:%v", err)
@@ -110,8 +111,4 @@ func (s *server) UserLogIn(ctx context.Context, req *pb.UserLogInReq) (rsp *pb.U
 		err = fmt.Errorf("password not match!")
 	}
 	return
-}
-
-func (s *server) UserLogOut(ctx context.Context, req *pb.UserLogOutReq) (*pb.UserLogOutRsp, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UserLogOut not implemented")
 }

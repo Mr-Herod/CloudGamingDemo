@@ -1,0 +1,38 @@
+syntax = "proto3";
+package record;
+
+option go_package="./;record";
+
+message saveRecordReq {
+  string username = 1;
+  string gamename = 2;
+  int32 score = 3;
+}
+
+message saveRecordRsp {
+  int32 errCode = 1;
+  string msg = 2;
+}
+
+message playRecord {
+  string username = 1;
+  string gamename = 2;
+  int32 score = 3;
+  int64 time = 4;
+}
+
+message getRankReq {
+  string username = 1;
+  string gamename = 2;
+}
+
+message getRankRsp {
+  int32 errCode = 1;
+  string msg = 2;
+  repeated playRecord records = 3;
+}
+
+service RecordService {
+  rpc saveRecord(saveRecordReq) returns (saveRecordRsp) {}
+  rpc GetRank(getRankReq) returns (getRankRsp) {}
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+package gaming;
+
+option go_package="./;gaming";
+
+message startGameReq {
+  string username = 1;
+  string clientDes = 2;
+}
+
+message startGameRsp {
+  int32 errCode = 1;
+  string msg = 2;
+  string serverDes = 3;
+}
+
+service GamingService {
+  rpc StartGame(startGameReq) returns (startGameRsp) {}
+}

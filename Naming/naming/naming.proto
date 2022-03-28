@@ -1,7 +1,7 @@
 syntax = "proto3";
 package naming;
 
-option go_package="./naming/;naming";
+option go_package="./;naming";
 
 message registerServiceReq {
   string serviceName = 1;

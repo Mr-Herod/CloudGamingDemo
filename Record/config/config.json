@@ -1,4 +1,5 @@
 {
-    "serviceName":"Gamer",
-    "listenPort": 8010
+    "serviceName":"Record",
+    "listenPort": 8012,
+    "dbSource": "herod2:2015hero@/cloudGame"
 }

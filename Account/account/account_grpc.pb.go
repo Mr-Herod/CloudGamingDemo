@@ -20,7 +20,6 @@ const _ = grpc.SupportPackageIsVersion7
 type AccountServiceClient interface {
 	UserRegister(ctx context.Context, in *UserRegisterReq, opts ...grpc.CallOption) (*UserRegisterRsp, error)
 	UserLogIn(ctx context.Context, in *UserLogInReq, opts ...grpc.CallOption) (*UserLogInRsp, error)
-	UserLogOut(ctx context.Context, in *UserLogOutReq, opts ...grpc.CallOption) (*UserLogOutRsp, error)
 }
 
 type accountServiceClient struct {
@@ -49,22 +48,12 @@ func (c *accountServiceClient) UserLogIn(ctx context.Context, in *UserLogInReq, 
 	return out, nil
 }
 
-func (c *accountServiceClient) UserLogOut(ctx context.Context, in *UserLogOutReq, opts ...grpc.CallOption) (*UserLogOutRsp, error) {
-	out := new(UserLogOutRsp)
-	err := c.cc.Invoke(ctx, "/account.AccountService/UserLogOut", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // AccountServiceServer is the server API for AccountService service.
 // All implementations must embed UnimplementedAccountServiceServer
 // for forward compatibility
 type AccountServiceServer interface {
 	UserRegister(context.Context, *UserRegisterReq) (*UserRegisterRsp, error)
 	UserLogIn(context.Context, *UserLogInReq) (*UserLogInRsp, error)
-	UserLogOut(context.Context, *UserLogOutReq) (*UserLogOutRsp, error)
 	mustEmbedUnimplementedAccountServiceServer()
 }
 
@@ -77,9 +66,6 @@ func (UnimplementedAccountServiceServer) UserRegister(context.Context, *UserRegi
 }
 func (UnimplementedAccountServiceServer) UserLogIn(context.Context, *UserLogInReq) (*UserLogInRsp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserLogIn not implemented")
-}
-func (UnimplementedAccountServiceServer) UserLogOut(context.Context, *UserLogOutReq) (*UserLogOutRsp, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UserLogOut not implemented")
 }
 func (UnimplementedAccountServiceServer) mustEmbedUnimplementedAccountServiceServer() {}
 
@@ -130,24 +116,6 @@ func _AccountService_UserLogIn_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AccountService_UserLogOut_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UserLogOutReq)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AccountServiceServer).UserLogOut(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/account.AccountService/UserLogOut",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AccountServiceServer).UserLogOut(ctx, req.(*UserLogOutReq))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // AccountService_ServiceDesc is the grpc.ServiceDesc for AccountService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -163,11 +131,7 @@ var AccountService_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "UserLogIn",
 			Handler:    _AccountService_UserLogIn_Handler,
 		},
-		{
-			MethodName: "UserLogOut",
-			Handler:    _AccountService_UserLogOut_Handler,
-		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "account/account.proto",
+	Metadata: "account.proto",
 }
