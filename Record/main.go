@@ -13,6 +13,7 @@ import (
 	config "github.com/Mr-Herod/CloudGamingDemo/Record/config"
 	pb "github.com/Mr-Herod/CloudGamingDemo/Record/record"
 
+	_ "github.com/go-sql-driver/mysql"
 	"google.golang.org/grpc"
 )
 
