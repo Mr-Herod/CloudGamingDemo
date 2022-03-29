@@ -1,50 +1,35 @@
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">
-		<title>Cloud Game Demo</title>
-		<style>
-			body {
-				font-family: "Quicksand", sans-serif;
-				font-weight: 400;
-				margin: 4em 10%;
-			}
-		</style>
-		<script type='text/javascript' src="/js/jquery-3.1.1.min.js"></script>
-		<script type='text/javascript' src="/js/main.js"></script>
-		
-	</head>
-	<body>
-		<h1>Cloud Game Demo</h1>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">
+	<title>云游戏中心-推箱子</title>
+	<style>
+		body {
+			font-family: "Quicksand", sans-serif;
+			font-weight: 400;
+			margin: 0;
+			background:LightSkyBlue;
+		}
+	</style>
+	<script type='text/javascript' src="/js/jquery-3.1.1.min.js"></script>
+	<script type='text/javascript' src="/js/main.js"></script>
+	<script type='text/javascript' src="/js/global_main.js"></script>
 
-		<div>
-<!--		Browser Session Description
-<br/>
-<textarea id="localSessionDescription" readonly="true"></textarea>
-<br/>
-<button onclick="window.copySessionDescription()">Copy browser Session Description to clipboard</button>
-<br/>
-<br/>
-<br/>
-
-Remote Session Description
-<br/>
-<textarea id="remoteSessionDescription" readonly="true"></textarea>
-<br/>
-<button onclick="window.startSession()">Start Session</button>
-<br/>
-<br/>
-
--->
-Video
-<br/>
-<div id="remoteVideos"></div> <br />
-
-Logs
-<br/>
-<div id="div"></div>
-
-		</div>
-	</body>
+</head>
+<body onload="welcome()"> <!-- 1536*720 -->
+<div  id="welcomeBox" style="position: fixed;left: 1vw;top: 0;width: 8vw;">
+</div>
+<img id="loadingImg" src="/img/loading.gif" style="height: 100px;width:100px;position: fixed;top:320px;left:600px;">
+<div id="loadingText">
+	<h1 style="text-align: center;position:fixed;top: 320px;left: 710px;">Loading(30s)...</h1>
+</div>
+<div>
+	<div id="remoteVideos" οnclick="location.href='/'"></div> <br />
+	<div id="div"></div>
+</div>
+<div>
+	<script>function back(){window.location.href="/center"}</script>
+	<input onclick="back()" style="position:fixed;right:0;top:0;width: 5vw;z-index: 100" type="button" value="返回">
+</div>
+</body>
 </html>
-

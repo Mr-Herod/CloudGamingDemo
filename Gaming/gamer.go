@@ -7,7 +7,6 @@ import (
 	"log"
 	"os/exec"
 	"strconv"
-	"time"
 
 	common "github.com/Mr-Herod/CloudGamingDemo/Common"
 	config "github.com/Mr-Herod/CloudGamingDemo/Gaming/config"
@@ -28,7 +27,7 @@ func InitGame() {
 	ffmpegPath = cfg.FFmpegPath
 }
 
-func StartGame(ctx context.Context, port string) {
+func StartGame(playinfo Playinfo, port string) {
 	cmd := exec.Command("/bin/bash", "-c",
 		"ln -sf "+dirPath+"1.jpg"+" "+dirPath+port+".jpg")
 	var stderr bytes.Buffer
@@ -44,9 +43,9 @@ func StartGame(ctx context.Context, port string) {
 			dirPath+"'"+port+".jpg' -r 2 -vsync 1 -async 1 "+
 			"-f lavfi -vcodec libvpx -cpu-used 5 -deadline 1 "+
 			"-g 10 -error-resilient 1 -auto-alt-ref 1 -speed 1 "+
-			"-f rtp 'rtp://localhost:"+port+"?pkt_size=1200' > "+
+			"-f rtp 'rtp://localhost:"+port+"?pkt_size=1200' >> "+
 			dirPath+"ffmpeg.log &")
-	err = execCmd(cmd, false)
+	err = execCmd(cmd, true)
 	cmdPid := cmd.Process.Pid + 1 //查看命令pid
 	fmt.Println("cmdPid:", cmdPid)
 	if err != nil {
@@ -61,14 +60,14 @@ func execCmd(cmd *exec.Cmd, debug bool) error {
 	err := cmd.Run()
 	if err != nil {
 		if debug {
-			log.Fatalf(fmt.Sprint(err) + ": " + stderr.String())
+			log.Printf(fmt.Sprint(err) + ": " + stderr.String())
 		}
 	}
 	return err
 }
 
-func KillGame(ctx context.Context, port string) {
-	saveRecord(ctx)
+func endGame(playinfo Playinfo, port string) {
+	saveRecord(playinfo, -1)
 	cmd := exec.Command("/bin/bash", "-c",
 		"kill $(ps aux | grep '"+ffmpegPath+"' | "+
 			"grep 'squares/"+port+".jpg' | tr -s ' '| cut -d ' ' -f 2)")
@@ -79,7 +78,7 @@ func KillGame(ctx context.Context, port string) {
 	fmt.Printf("Kill game success:%v", err)
 }
 
-func saveRecord(ctx context.Context) {
+func saveRecord(playinfo Playinfo, score int) {
 	// Set up a connection to the server.
 	ip, port, _ := common.FindServer("Record")
 	conn, err := grpc.Dial(ip+":"+strconv.Itoa(int(port)), grpc.WithTransportCredentials(insecure.NewCredentials()))
@@ -89,16 +88,15 @@ func saveRecord(ctx context.Context) {
 	}
 	defer conn.Close()
 	cli := record.NewRecordServiceClient(conn)
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second*5)
-	defer cancel()
 
-	rsp, err := cli.SaveRecord(ctx, &record.SaveRecordReq{
-		Username: "herod",
-		Gamename: "推箱子",
-		Score:    0,
+	rsp, err := cli.SaveRecord(context.Background(), &record.SaveRecordReq{
+		Username: playinfo.Username,
+		Nickname: playinfo.Nickname,
+		Gamename: playinfo.Gamename,
+		Score:    int32(score),
 	})
 	if err != nil || rsp.ErrCode != 0 {
-		log.Printf("UserLogin error: %v", err)
+		log.Printf("SaveRecord error: %v", err)
 		return
 	}
 	log.Printf("rsp: %v", rsp)

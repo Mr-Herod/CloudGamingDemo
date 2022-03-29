@@ -5,8 +5,9 @@ option go_package="./;record";
 
 message saveRecordReq {
   string username = 1;
-  string gamename = 2;
-  int32 score = 3;
+  string nickname = 2;
+  string gamename = 3;
+  int32 score = 4;
 }
 
 message saveRecordRsp {
@@ -15,10 +16,10 @@ message saveRecordRsp {
 }
 
 message playRecord {
-  string username = 1;
+  string nickname = 1;
   string gamename = 2;
   int32 score = 3;
-  int64 time = 4;
+  string time = 4;
 }
 
 message getRankReq {

@@ -5,7 +5,9 @@ option go_package="./;gaming";
 
 message startGameReq {
   string username = 1;
-  string clientDes = 2;
+  string nickname = 2;
+  string gamename = 3;
+  string clientDes = 4;
 }
 
 message startGameRsp {

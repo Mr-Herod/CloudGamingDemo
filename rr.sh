@@ -5,28 +5,30 @@ kill $(sudo ps aux | grep './serverAccount' | tr -s ' '| cut -d ' ' -f 2)
 kill $(sudo ps aux | grep './serverGaming' | tr -s ' '| cut -d ' ' -f 2)
 kill $(sudo ps aux | grep './serverRecord' | tr -s ' '| cut -d ' ' -f 2)
 # start all services
+chmod 777 ~/CloudGamingDemo/resource/programs/ffmpeg_linux
+
 cd ~/CloudGamingDemo/Naming
 chmod +x serverNaming
-./serverNaming >> log.out &
-sleep 2
+./serverNaming >> ../log_Naming.out &
+sleep 3
 
 cd ~/CloudGamingDemo/Account
 chmod +x serverAccount
-./serverAccount >> log.out &
-sleep 2
+./serverAccount >> ../log_Account.out &
+#sleep 2
 
 cd ~/CloudGamingDemo/Gateway
 chmod +x serverGateway
-./serverGateway >> log.out &
-sleep 2
+./serverGateway >> ../log_Gateway.out &
+#sleep 2
 
 cd ~/CloudGamingDemo/Gaming
 chmod +x serverGaming
-./serverGaming >> log.out &
-sleep 2
+./serverGaming >> ../log_Gaming.out &
+#sleep 2
 
 cd ~/CloudGamingDemo/Record
 chmod +x serverRecord
-./serverRecord >> log.out &
+./serverRecord >> ../log_Record.out &
 
 

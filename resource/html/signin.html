@@ -1,18 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>云游戏平台-主页</title>
+<html ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>云游戏平台-登录</title>
+	<link href="/css/signin_main.css" media="screen" rel="stylesheet" type="text/css">
+	<link href="/css/global_main.css" media="screen" rel="stylesheet" type="text/css">
 </head>
+<style lang="css">
+	.f_bg{ width:100vw;padding:0;text-align:center; left:0vw; margin:0; background:#409EFF;position:fixed;bottom:0;}
+	.foot{ width:100vw;padding:0; margin:0px 0; left:1vw; position:relative; padding-bottom:15px;}
+
+	.user{
+		margin-left: 80vw;
+		line-height: 60px;
+		font-weight:normal;
+		color:#f9fafc;
+		font-size: 14px;
+	}
+</style>
 <body>
-	<br/>
-	<form name="signin" action="/signin" method="post">
-		username: <input type="text" name="username"><br>
-		password: <input type="password" name="password"><br>
-		<input type="submit" value="登录">
-	</form>
-	<br/>
-	<br/>
-	<br/>
-</body>
-</html>
+<div class="login-bg-plain stain" style="background:LightSkyBlue">
+	<div class="form-basic" id="login">
+		<div class="form-content">
+			<div class="login-header">
+				<div class="logo"><span class="color"></span> </div>
+			</div>
+			<form name="signin" action="/signin" method="post">
+				<table>
+					<tbody><tr>
+						<td><input id="email" type="text" name="username" placeholder="账号" value="" tabindex="1"></td>
+					</tr>
+					<tr>
+						<td><input type="password" name="password" placeholder="密码" value="" tabindex="2"></td>
+					</tr>
+					<tr>
+						<td class="remember-me-td">
+							<label class="remember-me" for="remember_me"><input type="checkbox" id="remember_me" tabindex="3" name="data[remember]" value="1">记住帐号</label><span class="forgot-pass"><a href="#" class="" tabindex="5">忘记密码?</a></span>
+						</td>
+					</tr>
+					<tr><td style="text-align: center;">
+						<input type="submit" class="login-btn" value="登录" tabindex="4">
+					</td>
+					</tr><tr>
+					</tr>
+					</tbody></table>
+			</form>
+			<div class="separator"><div class="separator-line"></div><span>OR</span><div class="separator-line"></div></div>
+			<form name="googleloginform" class="oauth2form" id="googlelogin" action="" method="post">
+				<table>
+					<tbody><tr>
+						<td style="text-align: center; color: #b9b9b9;">
+							<input type="hidden" name="data[provider_id]" value="1">
+							<input type="submit" class="google-btn" value="Sign in with Google" tabindex="4">
+						</td>
+					</tr>
+					</tbody></table>
+			</form>
+			<div class="login-footer">
+				<span>没有帐号? <a href="/signup">点击注册</a></span>
+			</div>
+		</div>
+	</div>
+</div>
+</body></html>
+

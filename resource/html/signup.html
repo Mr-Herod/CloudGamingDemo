@@ -1,19 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html >
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>用户注册</title>
+	<title>云游戏平台-注册</title>
+	<link href="/css/signup_main.css" media="screen" rel="stylesheet" type="text/css">
+	<link href="/css/global_main.css" media="screen" rel="stylesheet" type="text/css">
 </head>
+<style lang="css">
+	.f_bg{ width:100vw;padding:0;text-align:center; left:0vw; margin:0; background:#409EFF;position:fixed;bottom:0;}
+	.foot{ height: 50px;width:100vw;padding:0; margin:0px 0; left:1vw; position:relative; padding-bottom:15px;}
+
+	.user{
+		margin-left: 80vw;
+		line-height: 30px;
+		font-weight:normal;
+		color:#f9fafc;
+		font-size: 14px;
+	}
+</style>
 <body>
-<br/>
-<form name="signup" action="/signup" method="post">
-	username: <input type="text" name="username"><br>
-	password: <input type="password" name="password"><br>
-	nickname: <input type="text" name="nickname"><br>
-	<input type="submit" value="注册">
-</form>
-<br/>
-<br/>
-<br/>
-</body>
-</html>
+<div class="login-bg-plain stain" style="background:LightSkyBlue">
+	<div class="form-basic" id="login">
+		<div class="form-content">
+			<div class="login-header">
+				<div class="logo"><span class="color"></span> </div>
+			</div>
+			<form name="signup" action="/signup" method="post">
+				<table>
+					<tbody><tr>
+						<td><input id="nickname" type="text" name="nickname" placeholder="昵称" value="" tabindex="1"></td>
+					</tr>
+					<tr>
+						<td><input id="email" type="text" name="username" placeholder="账号" value="" tabindex="1"></td>
+					</tr>
+					<tr>
+						<td><input type="password" name="password" placeholder="密码" value="" tabindex="2"></td>
+					</tr>
+
+					<tr><td style="text-align: center;">
+						<input type="submit" class="login-btn" value="注册" tabindex="4">
+					</td>
+					</tr><tr>
+					</tr>
+					</tbody></table>
+			</form>
+
+			<div class="login-footer">
+			</div>
+		</div>
+	</div>
+</div>
+
+</body></html>
+
