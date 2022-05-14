@@ -64,9 +64,9 @@ func main() {
 func (s *server) SaveRecord(ctx context.Context, req *pb.SaveRecordReq) (rsp *pb.SaveRecordRsp, err error) {
 	rsp = &pb.SaveRecordRsp{}
 	_, err = DB.Exec(
-		"INSERT INTO records (recordID,userID,userName,gameID,gameName,score,recordTime) "+
+		"INSERT INTO records (recordID,userID,userName,nickName,gameID,gameName,score,recordTime) "+
 			"VALUES (?, ?, ?, ?, ?, ?, ?)",
-		DefaultID, DefaultID, req.Username, DefaultID, req.Gamename, req.Score, time.Now().Unix(),
+		DefaultID, DefaultID, req.Username, req.Nickname, DefaultID, req.Gamename, req.Score, time.Now().Unix(),
 	)
 	if err != nil {
 		log.Printf("DB.Exec error,err:%v", err)
@@ -74,9 +74,9 @@ func (s *server) SaveRecord(ctx context.Context, req *pb.SaveRecordReq) (rsp *pb
 		rsp.Msg = fmt.Sprintf("DB.Exec error,err:%v", err)
 		return
 	}
-	log.Printf("UserRegister succseeded!")
+	log.Printf("SaveRecord succseeded!")
 	rsp.ErrCode = 0
-	rsp.Msg = fmt.Sprintf("UserRegister succeeded!")
+	rsp.Msg = fmt.Sprintf("SaveRecord succeeded!")
 	return
 }
 
@@ -90,17 +90,17 @@ func (s *server) GetRank(ctx context.Context, req *pb.GetRankReq) (rsp *pb.GetRa
 	}()
 	var rows *sql.Rows
 	if req.Username != "" && req.Gamename != "" {
-		rows, err = DB.Query("SELECT userName,gameName,score,recordTime "+
+		rows, err = DB.Query("SELECT nickName,gameName,score,recordTime "+
 			"FROM records WHERE userName=? AND gameName=? ORDER BY recordTime DESC",
 			req.Username, req.Gamename)
 	} else if req.Username != "" {
-		rows, err = DB.Query("SELECT userName,gameName,score,recordTime "+
+		rows, err = DB.Query("SELECT nickName,gameName,score,recordTime "+
 			"FROM records WHERE userName=? ORDER BY recordTime DESC", req.Username)
 	} else if req.Gamename != "" {
-		rows, err = DB.Query("SELECT userName,gameName,score,recordTime "+
+		rows, err = DB.Query("SELECT nickName,gameName,score,recordTime "+
 			"FROM records WHERE gameName=? ORDER BY recordTime DESC", req.Gamename)
 	} else {
-		rows, err = DB.Query("SELECT userName,gameName,score,recordTime " +
+		rows, err = DB.Query("SELECT nickName,gameName,score,recordTime " +
 			"FROM records ORDER BY recordTime DESC")
 	}
 	if err != nil {
@@ -110,10 +110,12 @@ func (s *server) GetRank(ctx context.Context, req *pb.GetRankReq) (rsp *pb.GetRa
 	records := []*pb.PlayRecord{}
 	for rows.Next() {
 		record := pb.PlayRecord{}
-		if err = rows.Scan(&record.Username, &record.Gamename, &record.Score, &record.Time); err != nil {
+		var timeInt int64
+		if err = rows.Scan(&record.Nickname, &record.Gamename, &record.Score, &timeInt); err != nil {
 			log.Fatal(err)
 			return
 		}
+		record.Time = time.Unix(timeInt, 0).Format("2006-01-02 15:04")
 		records = append(records, &record)
 	}
 	if err = rows.Err(); err != nil {

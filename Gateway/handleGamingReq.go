@@ -8,6 +8,8 @@ import (
 	"strconv"
 	"time"
 
+	"google.golang.org/grpc/metadata"
+
 	common "github.com/Mr-Herod/CloudGamingDemo/Common"
 	gaming "github.com/Mr-Herod/CloudGamingDemo/Gaming/gaming"
 
@@ -18,6 +20,8 @@ import (
 
 type StartGameReq struct {
 	Username  string `json:"username"`
+	Nickname  string `json:"nickname"`
+	Gamename  string `json:"gamename"`
 	ClientDes string `json:"clientDes"`
 }
 
@@ -27,8 +31,14 @@ func HandleStartGame(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
+	ctx, cancel := context.WithTimeout(context.Background(), time.Minute*30)
+	defer cancel()
+	ctx = metadata.NewOutgoingContext(
+		ctx,
+		metadata.Pairs("username", reqBody.Username, "nickname", reqBody.Nickname, "gamename", reqBody.Gamename),
+	)
 
-	rspStr, err := gamingHandler(reqBody.Username, reqBody.ClientDes)
+	rspStr, err := gamingHandler(ctx, reqBody)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
@@ -36,7 +46,9 @@ func HandleStartGame(c *gin.Context) {
 	c.String(http.StatusOK, rspStr)
 }
 
-func gamingHandler(username, clientDes string) (string, error) {
+func gamingHandler(ctx context.Context, req StartGameReq) (string, error) {
+	clientDes := req.ClientDes
+	log.Printf("HandleStartGame ctx:%+v", ctx)
 	log.Printf("ClientDes: %v", clientDes[len(clientDes)-20:])
 	// Set up a connection to the server.
 	ip, port, _ := common.FindServer("Gaming")
@@ -47,11 +59,10 @@ func gamingHandler(username, clientDes string) (string, error) {
 	}
 	defer conn.Close()
 	cli := gaming.NewGamingServiceClient(conn)
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second*5)
-	defer cancel()
-
 	rsp, err := cli.StartGame(ctx, &gaming.StartGameReq{
-		Username:  username,
+		Username:  req.Username,
+		Nickname:  req.Nickname,
+		Gamename:  req.Gamename,
 		ClientDes: clientDes,
 	})
 	if err != nil || rsp.ErrCode != 0 {

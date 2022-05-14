@@ -16,6 +16,7 @@ type ServiceConfig struct {
 	GameImgPath string `json:"gameImgPath"`
 	GameWinPos  string `json:"gameWinPos"`
 	FFmpegPath  string `json:"ffmpegPath"`
+	StunServer  string `json:"stunServer"`
 }
 
 var ServiceConf ServiceConfig

@@ -42,9 +42,12 @@ func main() {
 }
 
 func (s *server) StartGame(ctx context.Context, req *pb.StartGameReq) (rsp *pb.StartGameRsp, err error) {
+	newCtx := context.Background()
+	newCtx = context.WithValue(newCtx, "username", ctx.Value("username"))
+	newCtx = context.WithValue(newCtx, "nickname", ctx.Value("nickname"))
+	newCtx = context.WithValue(newCtx, "nickname", ctx.Value("gamename"))
 	desChan := make(chan string)
-	go RTC(ctx, req.ClientDes, desChan)
+	go RTC(newCtx, req.ClientDes, desChan)
 	serverDes := <-desChan
-
 	return &pb.StartGameRsp{ServerDes: serverDes}, nil
 }

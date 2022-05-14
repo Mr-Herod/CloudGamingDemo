@@ -1,0 +1,318 @@
+rdb.Set error,serverName:Account, info:{Account localhost 8011},err:ERR wrong number of arguments for HMSETrdb.Set error,serverName:Gaming, info:{Gaming localhost 8010},err:ERR wrong number of arguments for HMSETrdb.Set error,serverName:Record, info:{Record localhost 8012},err:ERR wrong number of arguments for HMSET2022/03/29 22:13:45 server listening at [::]:10086
+2022/03/29 22:13:48 Set service redis: &{Name:Account Ip:localhost Port:8011} succeeded!
+2022/03/29 22:13:48 RegisterService: &{Name:Account Ip:localhost Port:8011} succeeded!
+2022/03/29 22:13:48 Set service redis: &{Name:Record Ip:localhost Port:8012} succeeded!
+2022/03/29 22:13:48 RegisterService: &{Name:Record Ip:localhost Port:8012} succeeded!
+2022/03/29 22:13:48 Set service redis: &{Name:Gaming Ip:localhost Port:8010} succeeded!
+2022/03/29 22:13:48 RegisterService: &{Name:Gaming Ip:localhost Port:8010} succeeded!
+2022/03/29 22:14:03 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/29 22:14:03 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/03/29 22:14:05 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/29 22:14:05 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/29 22:14:18 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/29 22:14:18 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/29 22:41:35 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/29 22:41:35 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/03/29 22:41:48 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/29 22:41:48 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/03/29 22:41:58 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/29 22:41:58 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/03/29 22:42:09 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/29 22:42:09 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/03/29 23:02:48 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/29 23:02:48 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/29 23:04:19 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/29 23:04:19 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/03/29 23:04:23 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/29 23:04:23 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/03/29 23:04:51 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/29 23:04:51 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/03/29 23:04:53 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/29 23:04:53 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/29 23:04:54 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/29 23:04:54 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/29 23:05:23 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/29 23:05:23 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/29 23:53:01 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/29 23:53:01 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 00:34:56 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 00:34:56 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 00:34:58 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 00:34:58 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 00:34:59 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 00:34:59 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 00:35:01 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 00:35:01 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 00:35:05 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 00:35:05 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 16:41:08 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:41:08 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/03/30 16:41:13 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:41:13 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/03/30 16:41:42 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:41:42 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/03/30 16:42:07 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:42:07 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/03/30 16:42:08 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:42:08 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 16:42:12 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:42:12 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/03/30 16:42:21 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:42:21 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 16:42:38 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:42:38 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/03/30 16:42:40 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:42:40 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/03/30 16:42:50 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:42:50 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 16:42:50 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:42:50 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 16:43:00 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:43:00 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/03/30 16:43:03 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:43:03 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 16:43:05 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:43:05 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 16:43:20 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:43:20 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 16:43:23 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:43:23 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 16:43:25 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:43:25 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 16:43:37 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:43:37 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 16:43:51 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:43:51 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/03/30 16:44:16 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:44:16 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 16:44:23 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:44:23 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 16:45:49 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 16:45:49 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 17:07:35 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 17:07:35 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 17:07:52 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 17:07:52 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 17:08:35 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 17:08:35 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/03/30 17:09:26 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 17:09:26 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 17:09:33 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 17:09:33 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 17:09:35 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 17:09:35 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 17:09:37 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 17:09:37 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 17:09:39 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 17:09:39 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 17:09:41 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 17:09:41 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 17:09:45 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 17:09:45 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/03/30 17:10:14 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/03/30 17:10:14 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/03 19:53:21 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/03 19:53:21 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/04/03 19:54:07 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/03 19:54:07 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/04/03 19:54:27 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/03 19:54:27 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/03 19:54:32 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/03 19:54:32 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/03 19:54:37 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/03 19:54:37 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/03 19:54:43 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/03 19:54:43 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/03 19:54:49 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/03 19:54:49 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/03 19:55:15 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/03 19:55:15 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/05 19:29:09 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/05 19:29:09 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/04/05 19:29:26 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/05 19:29:26 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/04/05 19:29:38 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/05 19:29:38 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/04/05 19:29:57 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/05 19:29:57 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/05 19:30:04 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/05 19:30:04 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/04/05 19:30:08 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/05 19:30:08 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/05 19:30:34 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/05 19:30:34 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/15 14:02:59 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/15 14:02:59 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/04/15 14:03:12 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/15 14:03:12 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/04/15 14:03:28 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/15 14:03:28 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/04/15 14:03:43 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/15 14:03:43 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/15 14:03:59 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/15 14:03:59 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/15 14:05:02 ServerMap: map[Account:0xc0000fb0b0 Gaming:0xc0001ba7e0 Record:0xc0001ba180] !
+2022/04/15 14:05:02 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/04/15 14:09:42 server listening at [::]:10086
+2022/04/15 14:09:45 Set service redis: &{Name:Gaming Ip:localhost Port:8010} succeeded!
+2022/04/15 14:09:45 RegisterService: &{Name:Gaming Ip:localhost Port:8010} succeeded!
+2022/04/15 14:09:45 Set service redis: &{Name:Record Ip:localhost Port:8012} succeeded!
+2022/04/15 14:09:45 RegisterService: &{Name:Record Ip:localhost Port:8012} succeeded!
+2022/04/15 14:09:45 Set service redis: &{Name:Account Ip:localhost Port:8011} succeeded!
+2022/04/15 14:09:45 RegisterService: &{Name:Account Ip:localhost Port:8011} succeeded!
+2022/04/15 14:10:13 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/04/15 14:10:13 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/04/15 14:10:20 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/04/15 14:10:20 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/04/15 14:11:02 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/04/15 14:11:02 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/04/15 14:11:14 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/04/15 14:11:14 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/04/15 14:11:17 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/04/15 14:11:17 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/04/15 14:11:18 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/04/15 14:11:18 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/04/15 14:11:32 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/04/15 14:11:32 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/15 14:11:42 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/04/15 14:11:42 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/15 14:11:49 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/04/15 14:11:49 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/15 14:11:49 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/04/15 14:11:49 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/15 14:11:56 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/04/15 14:11:56 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/15 14:12:01 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/04/15 14:12:01 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/15 14:12:24 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/04/15 14:12:24 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/04/15 14:12:40 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/04/15 14:12:40 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/15 14:12:55 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/04/15 14:12:55 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/15 14:13:01 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/04/15 14:13:01 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/15 14:32:59 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/04/15 14:32:59 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/04/18 17:18:22 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/04/18 17:18:22 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/05/08 15:33:24 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:33:24 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/05/08 15:34:10 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:34:10 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/05/08 15:34:31 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:34:31 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:34:36 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:34:36 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:34:39 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:34:39 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:34:44 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:34:44 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:34:46 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:34:46 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:34:47 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:34:47 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:34:49 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:34:49 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:34:50 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:34:50 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:34:52 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:34:52 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:34:53 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:34:53 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:34:55 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:34:55 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:34:57 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:34:57 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:35:01 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:35:01 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:35:31 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:35:31 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:37:09 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:37:09 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/05/08 15:37:21 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:37:21 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:37:35 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:37:35 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:37:36 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:37:36 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:37:46 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:37:46 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:37:56 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:37:56 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:42:31 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:42:31 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:42:34 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:42:34 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:42:34 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:42:34 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:43:21 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:43:21 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/05/08 15:51:03 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:51:03 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:51:14 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:51:14 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/08 15:51:48 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/08 15:51:48 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/10 14:52:06 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 14:52:06 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/05/10 14:52:55 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 14:52:55 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/05/10 14:53:10 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 14:53:10 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/10 14:53:13 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 14:53:13 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/10 14:53:17 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 14:53:17 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/10 14:53:20 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 14:53:20 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/10 15:53:11 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 15:53:11 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/05/10 15:53:16 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 15:53:16 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/05/10 15:53:21 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 15:53:21 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/05/10 15:53:42 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 15:53:42 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/10 15:53:56 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 15:53:56 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/10 15:53:56 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 15:53:56 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/05/10 15:53:58 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 15:53:58 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/05/10 15:54:55 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 15:54:55 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/10 16:13:52 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 16:13:52 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/10 16:20:04 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 16:20:04 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/05/10 16:22:16 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 16:22:16 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/05/10 16:22:18 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 16:22:18 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/05/10 16:22:35 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 16:22:35 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/10 16:50:04 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 16:50:04 Finding server: Account &{Name:Account Ip:localhost Port:8011}!
+2022/05/10 16:50:54 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 16:50:54 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/05/10 16:51:05 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 16:51:05 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/10 16:51:09 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 16:51:09 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/10 16:51:19 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 16:51:19 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/10 16:51:27 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 16:51:27 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/10 16:51:31 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 16:51:31 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/10 16:51:32 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 16:51:32 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/10 16:51:48 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 16:51:48 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/10 16:56:05 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 16:56:05 Finding server: Record &{Name:Record Ip:localhost Port:8012}!
+2022/05/10 20:10:43 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 20:10:43 Finding server: Gaming &{Name:Gaming Ip:localhost Port:8010}!
+2022/05/10 20:11:15 ServerMap: map[Account:0xc0001c2840 Gaming:0xc0000fd0b0 Record:0xc0000fdb90] !
+2022/05/10 20:11:15 Finding server: Record &{Name:Record Ip:localhost Port:8012}!

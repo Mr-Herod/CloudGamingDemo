@@ -21,7 +21,8 @@ message userLogInReq {
 
 message userLogInRsp {
   int32 errCode = 1;
-  string msg = 2;
+  string nickname = 2;
+  string msg = 3;
 }
 
 service AccountService {

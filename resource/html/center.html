@@ -1,0 +1,86 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">
+    <script type='text/javascript' src="/js/global_main.js"></script>
+    <title>云游戏平台-大厅</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "Quicksand", sans-serif;
+            font-weight: 400;
+            margin: 0;
+            background:LightSkyBlue;
+        }
+    </style>
+    <script type='text/javascript' src="/js/jquery-3.1.1.min.js"></script>
+</head>
+<body onload="welcome()">
+<div class="page_title" style="align-items: center">
+    <h1 style="position: fixed;left: 10vw;top:5vh">云游戏大厅(点击即玩)</h1>
+</div>
+    <div class="game_item" style="border-radius:15%;width:20vw;height:20vh;left: 15vw;top:20vh;position: fixed;z-index: 100;">
+        <a href="/play">
+        <img style="border-radius:15%;width:10vw;height:20vh;" src="/img/game_square.jpg">
+        </a>
+        <div class="" style="position:relative;top:2vh;width:10vw;text-align: center">
+            推箱子
+        </div>
+    </div>
+    <div class="game_item" style="border-radius:15%;width:20vw;height:20vh;left: 35vw;top:20vh;position: fixed;z-index: 100;">
+        <img style="border-radius:15%;width:10vw;height:20vh;" src="/img/game_hundouluo.jpg">
+        <div class="" style="position:relative;top:2vh;width:10vw;text-align: center">
+            魂斗罗
+        </div>
+    </div>
+    <div class="game_item" style="border-radius:15%;width:20vw;height:20vh;left: 55vw;top:20vh;position: fixed;z-index: 100;">
+        <img style="border-radius:15%;width:10vw;height:20vh;" src="/img/game_mario.jpg">
+        <div class="" style="position:relative;top:2vh;width:10vw;text-align: center">
+            超级马里奥
+        </div>
+    </div>
+    <div class="game_item" style="border-radius:15%;width:20vw;height:20vh;left: 75vw;top:20vh;position: fixed;z-index: 100;">
+        <img style="border-radius:15%;width:10vw;height:20vh;" src="/img/game_snake.jpg">
+        <div class="" style="position:relative;top:2vh;width:10vw;text-align: center">
+            贪吃蛇
+        </div>
+    </div>
+    <div class="game_item" style="border-radius:15%;width:20vw;height:20vh;left: 15vw;top:55vh;position: fixed;z-index: 100;">
+            <img style="border-radius:15%;width:10vw;height:20vh;" src="/img/game_king.jpg">
+        <div class="" style="position:relative;top:2vh;width:10vw;text-align: center">
+            王者荣耀
+        </div>
+    </div>
+<div class="game_item" style="border-radius:15%;width:20vw;height:20vh;left: 35vw;top:55vh;position: fixed;z-index: 100;">
+        <img style="border-radius:15%;width:10vw;height:20vh;" src="/img/game_speed.jpg">
+    <div class="" style="position:relative;top:2vh;width:10vw;text-align: center">
+        QQ飞车
+    </div>
+</div>
+<div class="game_item" style="border-radius:15%;width:20vw;height:20vh;left: 55vw;top:55vh;position: fixed;z-index: 100;">
+        <img style="border-radius:15%;width:10vw;height:20vh;" src="/img/game_lol.jpg">
+    <div class="" style="position:relative;top:2vh;width:10vw;text-align: center">
+        英雄联盟
+    </div>
+</div>
+<div  id="welcomeBox" style="position: fixed;left: 1vw;top: 0;width: 8vw;">
+</div>
+<div class="game_item" style="border-radius:15%;width:20vw;height:20vh;left: 75vw;top:55vh;position: fixed;z-index: 100;">
+        <img style="border-radius:15%;width:10vw;height:20vh;" src="/img/game_roco.jpg">
+    <div class="" style="position:relative;top:2vh;width:10vw;text-align: center">
+        洛克王国
+    </div>
+</div>
+    <div class="game_list" style="background:lightblue;opacity:0.5;width:80vw;height:80vh;position: fixed;left: 10vw;top:15vh">
+    </div>
+
+<div >
+    <script>function back(){window.location.href="/rank_all"}</script>
+    <input style="position:fixed;font-size:20px;width: 10vw;height:6vh;z-index: 100;left: 45vw;top: 86vh" type="button" onclick="back()" value="排行榜">
+</div>
+</body>
+</html>
+

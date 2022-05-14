@@ -1,21 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>云游戏平台-主页</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>云游戏平台-主页</title>
+	<link href="/css/global_main.css" media="screen" rel="stylesheet" type="text/css">
 </head>
-<body>
+<style lang="css">
+.f_bg{ width:100vw;padding:0;text-align:center; left:0vw; margin:0; background:#409EFF;position:fixed;bottom:0;}
+.foot{ width:100vw;padding:0; margin:0px 0; left:1vw; position:relative; padding-bottom:0px;}
+
+.user{
+margin-left: 80vw;
+line-height: 60px;
+font-weight:normal;
+color:#f9fafc;
+font-size: 14px;
+}
+.live{
+	position: relative;
+}
+.live img{
+	width: 299px;
+	height: 109px;
+	z-index: 100;
+	top:410px;
+	left:625px;
+	position:fixed;
+}
+@keyframes living {
+	0%{
+		transform: scale(1);
+		opacity: 1;
+	}
+	50%{
+		transform: scale(1.5);
+		opacity: 0.3;   /*圆形放大的同时，透明度逐渐减小为0*/
+	}
+	100%{
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.live span{
+	width: 260px;
+	height: 100px;
+	z-index: 98;
+	top:415px;
+	left:640px;
+	position:fixed;
+	background: #99ffb6;
+	border-radius: 50%;
+	-webkit-animation: living 3s linear infinite;
+}
+.live span:nth-child(2){
+	-webkit-animation-delay: 1.5s; /*第二个span动画延迟1.5秒*/
+}
+
+</style>
+
+<body style="background:LightSkyBlue">
 	<br/>
 	<div width="20%" height="20%" align-content="center" align-items="center">
-		<a href="/signup" > 注册 </a>
+		<div class="live" style="z-index:100" >
+			<a href="/signin">
+			<img src="/img/start_button1.png" >
+			</a>
+			<span></span>
+			<span></span>
+		</div>
+		<img style="width:100vw;height:86vh;position:fixed;top:0px;left:0px;z-index:-1"
+			 src="/img/cloud_gaming_ad.jpg">
+
+		<div class="f_bg">
+			<div class="foot">
+				<div class="f_top">
+					<div class="f_l">&nbsp;</div>
+					<div class="f_r">&nbsp;</div>
+				</div>
+				<p>江西师范大学</p>
+				<p>201826205001</p>
+				<p>Copyright © 2022</p>
+			</div>
+		</div>
 	</div>
-	<br/>
-	<br/>
-	<br/>
-	<a href="/signin">  登录 </a>
-	<br/>
-	<br/>
-	<br/>
-	<a href="/play" > 试玩 </a>
 </body>
 </html>

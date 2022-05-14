@@ -72,7 +72,7 @@ func (s *server) UserRegister(ctx context.Context, req *pb.UserRegisterReq) (rsp
 		rsp.Msg = fmt.Sprintf("DB.Exec error,err:%v", err)
 		return
 	}
-	log.Printf("UserRegister succseeded!")
+	log.Printf("UserRegister succseeded! userinfo: %+v ", req)
 	rsp.ErrCode = 0
 	rsp.Msg = fmt.Sprintf("UserRegister succeeded!")
 	return
@@ -90,14 +90,14 @@ func (s *server) UserLogIn(ctx context.Context, req *pb.UserLogInReq) (rsp *pb.U
 			rsp.Msg = fmt.Sprintf("UserLogIn succeeded")
 		}
 	}()
-	rows, err := DB.Query("SELECT password FROM users WHERE userName = ?", req.Username)
+	rows, err := DB.Query("SELECT nickName,password FROM users WHERE userName = ?", req.Username)
 	if err != nil {
 		log.Fatal(err)
 		return
 	}
-	var password string
+	var nickname, password string
 	for rows.Next() {
-		if err = rows.Scan(&password); err != nil {
+		if err = rows.Scan(&nickname, &password); err != nil {
 			log.Fatal(err)
 			return
 		}
@@ -110,5 +110,6 @@ func (s *server) UserLogIn(ctx context.Context, req *pb.UserLogInReq) (rsp *pb.U
 	if password != req.Password {
 		err = fmt.Errorf("password not match!")
 	}
+	rsp.Nickname = nickname
 	return
 }

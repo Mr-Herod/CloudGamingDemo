@@ -43,7 +43,9 @@ func HandleSignUp(c *gin.Context) {
 		return
 	}
 	log.Printf("rsp: %v", rsp)
-	c.Redirect(http.StatusTemporaryRedirect, "/play")
+	c.SetCookie("username", username, 60*60*24, "/", "mrherod.cn", false, false)
+	c.SetCookie("nickname", nickname, 60*60*24, "/", "mrherod.cn", false, false)
+	c.Redirect(http.StatusTemporaryRedirect, "/center")
 }
 
 func HandleSignIn(c *gin.Context) {
@@ -72,5 +74,7 @@ func HandleSignIn(c *gin.Context) {
 		return
 	}
 	log.Printf("rsp: %v", rsp)
-	c.Redirect(http.StatusTemporaryRedirect, "/play")
+	c.SetCookie("username", username, 60*60*24, "/", "mrherod.cn", false, false)
+	c.SetCookie("nickname", rsp.Nickname, 60*60*24, "/", "mrherod.cn", false, false)
+	c.Redirect(http.StatusTemporaryRedirect, "/center")
 }
