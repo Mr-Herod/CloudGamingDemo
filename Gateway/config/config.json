@@ -1,0 +1,5 @@
+{
+    "serviceName":"Gateway",
+    "listenPort": 8009,
+    "resourcePath": "/home/ubuntu/CloudGamingDemo/resource/"
+}
